@@ -28,15 +28,47 @@ header {
     align-content: center;
 }
 header h1 {
+    display:flex;
     font-weight: 100;
     color: #DDDDDD;
     font-size: 5em;
     font-family: 'Raleway', sans-serif;
+    flex-wrap: nowrap;
     /* font-family: 'Dancing Script', cursive; */
+}
+#fname {
+    animation: slide-in-d 1.5s ease;
+}
+#lname {
+    animation: slide-in-w 1.5s ease;
 }
 header h1>a {
     text-decoration: none;
     color: #DDDDDD;
+    display: block;
+    overflow: hidden;
+}
+@keyframes slide-in-d {
+    0% {
+        width: 0.7em;
+    }
+    50% {
+        width: 0.7em;
+    }
+    100% {
+        width: 3.25em;
+    }
+}
+@keyframes slide-in-w {
+    0% {
+        width: 1.1em;
+    }
+    50% {
+        width: 1.1em;
+    }
+    100% {
+        width: 4.5em;
+    }
 }
 #primary-nav {
     justify-self: flex-end;
