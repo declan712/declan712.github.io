@@ -1,12 +1,21 @@
 $(document).ready(function() {
 
+    $('a[href^="#"]').on('click', function(e){
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop : $(this.hash).offset().top-50
+        }, 500);
+    });
+
     $(".expand-study").click(function(event) {
         event.preventDefault();
         $(this).parent().children().removeClass("hidden");
+        $(this).hide();
     });
     $(".collapse-study").click(function(event) {
         event.preventDefault();
         $(this).parent().addClass("hidden");
+        $(this).parent().parent().children(".expand-study").show();
     });
 
     $(".slider .next").click(function(event) {

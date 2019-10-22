@@ -12,16 +12,19 @@
 </head>
 <body>
     <header>
-        <h1>DW - Portfolio</h1>
+        <a href="#splash"><h1>DW - Portfolio</h1></a>
         <ul id="primary-nav">
             <li>
-                <a href="#">1</a>
+                <a href="#early-prototype">Early Prototype</a>
             </li>
             <li>
-                <a href="#">2</a>
+                <a href="#wip">WiP</a>
             </li>
             <li>
-                <a href="#">3</a>
+                <a href="#final-delivery">Final Delivery</a>
+            </li>
+            <li>
+                <a href="#portfolio">Reflection</a>
             </li>
         </ul>
     </header>
@@ -66,35 +69,42 @@
         </h1>
         <article class="case-study">
             <h1>What should be in each case study?</h1>
-            <input type="button" class="expand-study  exp-col" value="expand">
-                <section class="hidden study-contents">
+            <section class="study-preview">
                     <strong>**Evidence** of your individual contributions through a range of multimedia (text, photos, illustrations, video etc).</strong>
                     <p>
                         **How should I collect evidence?** Focusing on your individual contributions, you can collect evidence from your team's journal (for the team assessments) and by maintaining your own journal (for the individual assessments — including the development of your *Portfolio*. However, be selective on the quality of the evidence you include in your final *Portfolio* (i.e. quality over quantity).
                     </p>
-                    <hr>
-                    <strong>**Discussions** of your individual design process — how you went from the initial idea to the finished product, the major changes along the way, methods of testing and receiving feedback etc.</strong>
-                    <p>                        
-                        **Why not discuss team design process too?** This is your opportunity to discuss your design process from an individual perspective — especially if that work does not appear in your team's final product.
-                    </p>
-                    <hr>
-                    <strong>**Reflections** on your individual efforts — whether you think the assessment was a success, which parts were not successful, how your learning has changed, whether your initial expectations were realistic etc.</strong>
-                    <p>                        
-                        **How do I know if my reflections are good enough?** To help you gauge whether your reflections are deep enough, ask your tutors to gauge the appropriateness of them throughout the semester.
-                    </p>
-                    <input type="button" class="collapse-study  exp-col" value="See Less">
-                </section>
+            </section>
+            <input type="button" class="expand-study  exp-col" value="expand">
+            <section class="hidden study-contents">
+                <hr>
+                <strong>**Discussions** of your individual design process — how you went from the initial idea to the finished product, the major changes along the way, methods of testing and receiving feedback etc.</strong>
+                <p>                        
+                    **Why not discuss team design process too?** This is your opportunity to discuss your design process from an individual perspective — especially if that work does not appear in your team's final product.
+                </p>
+                <hr>
+                <strong>**Reflections** on your individual efforts — whether you think the assessment was a success, which parts were not successful, how your learning has changed, whether your initial expectations were realistic etc.</strong>
+                <p>                        
+                    **How do I know if my reflections are good enough?** To help you gauge whether your reflections are deep enough, ask your tutors to gauge the appropriateness of them throughout the semester.
+                </p>
+                <input type="button" class="collapse-study  exp-col" value="See Less">
+            </section>
         </article>
 
-        <article class="case-study">
+        <article class="case-study" id="early-prototype">
             <h1>Early Prototype</h1>
+            <section class="study-preview">
+                <p>
+                    Here's what you can see when it isnt expanded
+                </p>
+            </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
                 <p>
                     it has some text
                 </p>
                 <section class="slider">
-                    <h1 class="prev"> PREV </h1>
+                    <h1 class="arrow prev"></h1>
                     <section class="slider-images">
                         <img src="images/early/1.png" class="active">
                         <img src="images/early/2.png">
@@ -105,77 +115,111 @@
                         <img src="images/early/7.png">
                         <img src="images/early/8.png">
                     </section>
-                    <h1 class="next"> NEXT </h1>
+                    <h1 class="arrow next"></h1>
                 </section>
                 
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
         </article>
 
-        <article class="case-study">
+        <article class="case-study" id="wip">
             <h1>Work in Progress</h1>
+            <section class="study-preview">
+                <p>
+                    Here's what you can see when it isnt expanded
+                </p>
+            </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
                 <p>
                     it has some text
                 </p>
                 <section class="slider">
-                        <h1 class="prev"> PREV </h1>
-                        <section class="slider-images">
-                            <img src="images/07-25.jpg" class="active">
-                            <img src="images/08-01.jpg">
-                            <img src="images/08-29-2.jpg">
-                            <img src="images/08-29.jpg">
-                            <img src="images/09-05.jpg">
-                            <img src="images/09-26-2.jpg">
-                            <img src="images/09-26.jpg">
+                    <h1 class="arrow prev"></h1>
+                    <section class="slider-images">
+                        <img src="images/07-25.jpg" class="active">
+                        <img src="images/08-01.jpg">
+                        <img src="images/08-29-2.jpg">
+                        <img src="images/08-29.jpg">
+                        <img src="images/09-05.jpg">
+                        <img src="images/09-26-2.jpg">
+                        <img src="images/09-26.jpg">
 
                         </section>
-                        <h1 class="next"> NEXT </h1>
+                        <h1 class="arrow next"></h1>
+                </section>
+                <hr>
+                <section class="slider">
+                    <h1 class="arrow prev"></h1>
+                    <section class="slider-images">
+                        <img src="images/wip/1.png" class="active">
+                        <img src="images/wip/2.png">
+                        <img src="images/wip/3.png">
+                        <img src="images/wip/4.png">
+                        <img src="images/wip/emp.png">
+                        <img src="images/wip/game.png">
+                        <img src="images/wip/news.png">
                     </section>
+                <h1 class="arrow next"></h1>
+                </section>
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
         </article>
 
-        <article class="case-study">
-                <h1>Week 11</h1>
-                <input type="button" class="expand-study exp-col" value="expand">
-                <section class="hidden study-contents">
-                    <p>
-                        not sure where to put these, some of it is WiP and some is after
-                    </p>
-                    <section class="slider">
-                            <h1 class="prev"> PREV </h1>
-                            <section class="slider-images">
-                                <img src="images/wk11/1.png" class="active">
-                                <img src="images/wk11/2.png">
-                                <img src="images/wk11/3.png">
-                                <img src="images/wk11/4.png">
-                                <img src="images/wk11/5.png">
-                                <img src="images/wk11/6.png">
-                                <img src="images/wk11/7.png">
-                                <img src="images/wk11/game.png">
-    
-                            </section>
-                            <h1 class="next"> NEXT </h1>
-                        </section>
-                    <input type="button" class="collapse-study  exp-col" value="See Less">
-                </section>
-            </article>
-
-        <article class="case-study">
+        <article class="case-study" id="final-delivery">
             <h1>Final Delivery</h1>
+            <section class="study-preview">
+                <p>
+                    Here's what you can see when it isnt expanded
+                </p>
+            </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
+                <hr>
                 <p>
                     it has some text
                 </p>
+                <section class="slider">
+                    <h1 class="arrow prev"></h1>
+                    <section class="slider-images">
+                        <img src="images/wk11/1.png" class="active">
+                        <img src="images/wk11/2.png">
+                        <img src="images/wk11/3.png">
+                        <img src="images/wk11/4.png">
+                        <img src="images/wk11/5.png">
+                        <img src="images/wk11/6.png">
+                        <img src="images/wk11/7.png">
+                        <img src="images/wk11/game.png">
+                    </section>
+                    <h1 class="arrow next"></h1>
+                </section>
+                <hr>
+                <section class="slider">
+                    <h1 class="arrow prev"></h1>
+                    <section class="slider-images">
+                        <img src="images/final/welcome.png" class="active">
+                        <img src="images/final/menu.png">
+                        <img src="images/final/intro.png">
+                        <img src="images/final/customise.png">
+                        <img src="images/final/player.png">
+                        <img src="images/final/project.png">
+                        <img src="images/final/result.png">
+                        <img src="images/final/sab.png">
+                        <img src="images/final/game.png">
+                    </section>
+                    <h1 class="arrow next"></h1>
+                </section>
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
         </article>
 
-        <article class="case-study">
+        <article class="case-study" id="portfolio">
             <h1>Participation & Portfolio</h1>
+            <section class="study-preview">
+                <p>
+                    Here's what you can see when it isnt expanded
+                </p>
+            </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
                 <p>

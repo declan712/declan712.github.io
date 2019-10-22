@@ -18,6 +18,9 @@ header {
     align-items: center;
     padding: 0.2em 0 0.2em 1em;
 }
+header a{
+    text-decoration: none;
+}
 #primary-nav {
     list-style: none;
     display: flex;
@@ -102,8 +105,11 @@ body {
     margin:1em;
     background: #444444;
 }
+.case-study>h1{
+    margin-bottom:0.5em;
+}
 .study-contents {
-    max-height:1000px;
+    max-height:2000px;
     transition: all 1s ease;
 }
 .study-contents.hidden {
@@ -137,41 +143,42 @@ body {
     display:flex;
     max-height:60vh;
 }
+.arrow {
+    display:block;
+    border:solid red;
+    border-width: 0 10px 10px 0;
+    padding:20px;
+}
 .slider .prev {
     z-index: 10;
     position: absolute;
     top: 50%;
-    left: 2em;
-    display: block;
-    background: #222222;
-    padding:1em;
-    border: 1px solid red;
+    left: 1em;
+    transform: rotate(135deg);
+
 }
 .slider .next {
     z-index: 10;
     position: absolute;
     top: 50%;
-    right: 2em;
-    display: block;
-    background: #222222;
-    padding:1em;
-    border: 1px solid red;
+    right: 1em;
+    transform: rotate(-45deg);
 }
 .slider-images {
     display:flex;
     margin-left:-0em;
-    transition: margin-left 0.2s ease-in-out;
+    transition: margin-left 0.1s ease-in-out;
 }
 .slider-images img {
     height:100%;
-    border-radius:30px;
+    border-radius:10px;
     filter: brightness(0.5);
     margin-left: 20px;
-    transition: filter 0.4s ease-in-out;
+    transition: filter 0.2s ease-in-out;
 }
 
 .slider-images img.active {
     height:100%;
-    border-radius:30px;
+    border-radius:10px;
     filter: none;
 }
