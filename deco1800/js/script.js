@@ -41,7 +41,7 @@ $(document).ready(function() {
             currImg.removeClass("active");
             prevImg.addClass("active");
             currMarg = $(this).parent().children(".slider-images").css("margin-left");
-            var margWidth = $(this).parent().children(".slider-images").children().css("width");
+            var margWidth = $(this).parent().children(".slider-images").children(".active").css("width");
             var newMarg = parseInt(currMarg) + (parseInt(margWidth)+18);
             currMarg = $(this).parent().children(".slider-images").css("margin-left",newMarg+"px");
         } else {
