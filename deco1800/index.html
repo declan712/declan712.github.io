@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <a href="#splash"><h1>DW - Portfolio</h1></a>
+        <a href="#bio"><h1>DW - Portfolio</h1></a>
         <ul id="primary-nav">
             <li>
                 <a href="#early-prototype">Early Prototype</a>
@@ -28,38 +28,32 @@
             </li>
         </ul>
     </header>
-    <section id=splash>
-        <video autoplay muted loop>
-            <source src="videos/slomo-train.mp4" type="video/mp4">
-                Your browser does not support the video tag
-        </video>
-    </section>
 
-    <section class="bio">
+    <section class="bio" id="bio">
         <section class="personal-info">
            <h1>Declan Wilkinson</h1>
             <p>Bachelor of Engineering (Electrical)/<br>Bachelor of Science (Mathematics)</p>
             <p>hello it me</p>
             <ul class="contact-details">
                 <li>
-                    <a href="matilto:declan.e.wilkinson@gmail.com">email</a>
+                    <a href="matilto:declan.e.wilkinson@gmail.com"><img src="images/icon/email.png"></a>
                 </li>
                 <li>
-                    <a href="http://niceme.me/">phone</a>
+                    <a href="http://niceme.me/"><img src="images/icon/phone.png"></a>
                 </li>
                 <li>
-                    <a href="http://www.declanwilkinson.me">website</a>
+                    <a href="http://www.declanwilkinson.me"><img src="images/icon/portfolio.png"></a>
                 </li>
                 <li>
-                    <a href="https://github.com/declan712">github</a>
+                    <a href="https://github.com/declan712"><img src="images/icon/github.png"></a>
                 </li>
                 <li>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">linkedin</a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/icon/in.png"></a>
                 </li>
             </ul>
 
         </section>
-        <img src="images/dp.jpg">
+        <!-- <img src="images/dp.jpg"> -->
         
     </section>
 
@@ -69,11 +63,14 @@
         </h1>
         <article class="case-study">
             <h1>What should be in each case study?</h1>
+            <hr>
             <section class="study-preview">
-                    <strong>**Evidence** of your individual contributions through a range of multimedia (text, photos, illustrations, video etc).</strong>
-                    <p>
-                        **How should I collect evidence?** Focusing on your individual contributions, you can collect evidence from your team's journal (for the team assessments) and by maintaining your own journal (for the individual assessments — including the development of your *Portfolio*. However, be selective on the quality of the evidence you include in your final *Portfolio* (i.e. quality over quantity).
-                    </p>
+                    <article>
+                        <strong>**Evidence** of your individual contributions through a range of multimedia (text, photos, illustrations, video etc).</strong>
+                        <p>
+                            **How should I collect evidence?** Focusing on your individual contributions, you can collect evidence from your team's journal (for the team assessments) and by maintaining your own journal (for the individual assessments — including the development of your *Portfolio*. However, be selective on the quality of the evidence you include in your final *Portfolio* (i.e. quality over quantity).
+                        </p>    
+                    </article>
             </section>
             <input type="button" class="expand-study  exp-col" value="expand">
             <section class="hidden study-contents">
@@ -93,20 +90,36 @@
 
         <article class="case-study" id="early-prototype">
             <h1>Early Prototype</h1>
+            <hr>
             <section class="study-preview">
-                <p>
-                    Here's what you can see when it isnt expanded
-                </p>
+                <article>
+                    <blockquote>
+                        "You will conceptualise and build a mobile web-based, interactive application to enhance the experience of visitors as they navigate a fictional museum/exhibition. The application will present data from the State Library of Queensland (SLQ) to provide an alternative, digital perspective on the exhibits in the museum/exhibition."
+                    </blockquote>
+                    <p class="quote-source">'Introduction to the Project Brief'</p>
+                </article>
+                <img src="images/early/1.png">
             </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
+                <hr>
                 <p>
-                    it has some text
+                    Throughout the first contact sessions I searched through the SLQ datasets and brainstormed ideas for projects with Connor, who later became a memeber of my group.<br>
+                    We eventually settled on the idea of creating a multiplayer game based on the railway employees dataset, however we each had different ideas of what this would look like. My initial idea from the rationale is shown below:
                 </p>
+                <blockquote>
+                    "The concept is to create a collaborative experience in which a group of people reconstruct parts of Queensland’s railway network through a game-like interface. The activity will use data from the “Queensland railway employees 1890-1915” SLQ data set to populate the game with real workers and jobs from the period, including their wages and the reason they were hired.
+                    <br><br>
+                    The game will consist of a central display showing a model of the train line, with the names and funds of each participant visible. Each player will be allocated an income depending on the number of players and success of the railway, which they can spend to hire more staff, complete research, or contribute to construction projects."
+
+                </blockquote>
+                <p class="quote-source">Declan Wilkinson, 'Early Prototype Rationale'</p>
                 <section class="slider">
                     <h1 class="arrow prev"></h1>
                     <section class="slider-images">
-                        <img src="images/early/1.png" class="active">
+                        <img src="images/07-25.jpg" class="active">
+                        <img src="images/08-01.jpg">
+                        <img src="images/early/1.png">
                         <img src="images/early/2.png">
                         <img src="images/early/3.png">
                         <img src="images/early/4.png">
@@ -117,17 +130,19 @@
                     </section>
                     <h1 class="arrow next"></h1>
                 </section>
-                
+                <p>
+                    <a href="https://invis.io/WNT9AOAEGTQ">Invision prototype</a>
+                </p>
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
         </article>
 
         <article class="case-study" id="wip">
             <h1>Work in Progress</h1>
+            <hr>
             <section class="study-preview">
-                <p>
-                    Here's what you can see when it isnt expanded
-                </p>
+                    <article>
+                    </article>
             </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
@@ -137,9 +152,7 @@
                 <section class="slider">
                     <h1 class="arrow prev"></h1>
                     <section class="slider-images">
-                        <img src="images/07-25.jpg" class="active">
-                        <img src="images/08-01.jpg">
-                        <img src="images/08-29-2.jpg">
+                        <img src="images/08-29-2.jpg" class="active">
                         <img src="images/08-29.jpg">
                         <img src="images/09-05.jpg">
                         <img src="images/09-26-2.jpg">
@@ -168,10 +181,9 @@
 
         <article class="case-study" id="final-delivery">
             <h1>Final Delivery</h1>
+            <hr>
             <section class="study-preview">
-                <p>
-                    Here's what you can see when it isnt expanded
-                </p>
+                <img src="images/big-choo.png" id="big-choo">
             </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
@@ -215,6 +227,7 @@
 
         <article class="case-study" id="portfolio">
             <h1>Participation & Portfolio</h1>
+            <hr>
             <section class="study-preview">
                 <p>
                     Here's what you can see when it isnt expanded
