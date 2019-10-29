@@ -94,7 +94,7 @@
             <section class="study-preview">
                 <article>
                     <blockquote>
-                        "You will conceptualise and build a mobile web-based, interactive application to enhance the experience of visitors as they navigate a fictional museum/exhibition. The application will present data from the State Library of Queensland (SLQ) to provide an alternative, digital perspective on the exhibits in the museum/exhibition."
+                        You will conceptualise and build a mobile web-based, interactive application to enhance the experience of visitors as they navigate a fictional museum/exhibition. The application will present data from the State Library of Queensland (SLQ) to provide an alternative, digital perspective on the exhibits in the museum/exhibition.
                     </blockquote>
                     <p class="quote-source">'Introduction to the Project Brief'</p>
                 </article>
@@ -102,18 +102,20 @@
             </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
-                <hr>
                 <p>
                     Throughout the first contact sessions I searched through the SLQ datasets and brainstormed ideas for projects with Connor, who later became a memeber of my group.<br>
                     We eventually settled on the idea of creating a multiplayer game based on the railway employees dataset, however we each had different ideas of what this would look like. My initial idea from the rationale is shown below:
                 </p>
                 <blockquote>
-                    "The concept is to create a collaborative experience in which a group of people reconstruct parts of Queensland’s railway network through a game-like interface. The activity will use data from the “Queensland railway employees 1890-1915” SLQ data set to populate the game with real workers and jobs from the period, including their wages and the reason they were hired.
+                    The concept is to create a collaborative experience in which a group of people reconstruct parts of Queensland’s railway network through a game-like interface. The activity will use data from the “Queensland railway employees 1890-1915” SLQ data set to populate the game with real workers and jobs from the period, including their wages and the reason they were hired.
                     <br><br>
-                    The game will consist of a central display showing a model of the train line, with the names and funds of each participant visible. Each player will be allocated an income depending on the number of players and success of the railway, which they can spend to hire more staff, complete research, or contribute to construction projects."
-
+                    The game will consist of a central display showing a model of the train line, with the names and funds of each participant visible. Each player will be allocated an income depending on the number of players and success of the railway, which they can spend to hire more staff, complete research, or contribute to construction projects.
                 </blockquote>
                 <p class="quote-source">Declan Wilkinson, 'Early Prototype Rationale'</p>
+                <p>
+                    The images below show the brainstorming in the contact session, as well as screenshots of my Invision prototype. The prototype can also be seen <a href="https://invis.io/WNT9AOAEGTQ" >here</a>.
+                </p>
+                
                 <section class="slider">
                     <h1 class="arrow prev"></h1>
                     <section class="slider-images">
@@ -131,7 +133,7 @@
                     <h1 class="arrow next"></h1>
                 </section>
                 <p>
-                    <a href="https://invis.io/WNT9AOAEGTQ">Invision prototype</a>
+                    Overall I was satisfied with the prototype produced, the only thing left out was the large screen to show the game progress. Much of the design from this prototype ended up very similar to the final delivery, so i would consider it very successful.
                 </p>
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
@@ -142,26 +144,55 @@
             <hr>
             <section class="study-preview">
                     <article>
-                    </article>
+                            <blockquote>
+                                    Your team will demonstrate their partially implemented web-based application for in-class critique. Your team will demonstrate the key interactive/technical features of their website.
+                            </blockquote>
+                            <p class="quote-source">'Work in Progress Brief'</p>
+                        </article>
+                        <img src="images/wip/1.png">
             </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
                 <p>
-                    it has some text
+                    Once we were put into groups we quickly decided that the majority of coding would be done by myself, with Connor assuming the role of team leader, Laura the lead designer, and Sophie the main documenter.<br>
+                    Partially due to this decision, the group decided to go forward with the multiplayer railway game concept that both Connor and myself presented in our early prototypes.
+                </p>
+                <p>
+                    heres another p
                 </p>
                 <section class="slider">
                     <h1 class="arrow prev"></h1>
                     <section class="slider-images">
-                        <img src="images/08-29-2.jpg" class="active">
-                        <img src="images/08-29.jpg">
+                        <img src="images/08-29.jpg" class="active">
+                        <img src="images/08-29-2.jpg">
                         <img src="images/09-05.jpg">
-                        <img src="images/09-26-2.jpg">
                         <img src="images/09-26.jpg">
-
+                        <img src="images/09-26-2.jpg">
                         </section>
                         <h1 class="arrow next"></h1>
                 </section>
-                <hr>
+                <p>
+                    Using this concept, I began by creating individual pages to test each element of the project in isolation. <br>
+                    The pages presented as part of this demo were:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Player screen</strong><br>
+                        Including working player creation using a database to store and retrieve user data, and displaying information about projects stored in the database.
+                    </li>
+                    <li>
+                        <strong>Employee screen</strong><br>
+                        This screen used SQL to query the SLQ dataset to find an employee matching the search term, then matched it with a picture using the Pixabay API.
+                    </li>
+                    <li>
+                        <strong>Game screen</strong><br>
+                        This page queried the database to display all players currently in the game, as well as all the projects the players could see.
+                    </li>
+                    <li>
+                        <strong>News screen</strong><br>
+                        This page was intended to be how game events and alerts were delivered to players. For the demo this page did not draw from any external sources.
+                    </li>
+                </ul>
                 <section class="slider">
                     <h1 class="arrow prev"></h1>
                     <section class="slider-images">
@@ -187,10 +218,10 @@
             </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
-                <hr>
                 <p>
-                    it has some text
+                    The comparison below shows the functional prototype that I developed on the left, and the final delivery as presented at the trade show on the right.
                 </p>
+                <section class="dual-slider">
                 <section class="slider">
                     <h1 class="arrow prev"></h1>
                     <section class="slider-images">
@@ -221,6 +252,7 @@
                     </section>
                     <h1 class="arrow next"></h1>
                 </section>
+                </section>
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
         </article>
@@ -243,6 +275,9 @@
         </article>
 
     </section>
-    
+    <section class="lightbox hidden">
+        <input type="button" class="close-lightbox" value="X">
+        <img class="lightbox-content" src="images/big-choo.png">
+    </section>
 </body>
 </html>

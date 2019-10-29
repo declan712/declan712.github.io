@@ -16,6 +16,8 @@ $(document).ready(function() {
         event.preventDefault();
         $(this).parent().addClass("hidden");
         $(this).parent().parent().children(".expand-study").show();
+        $('html, body').animate({
+            scrollTop : $(this).parent().parent().offset().top-50},500);
     });
 
     $(".slider .next").click(function(event) {
@@ -47,5 +49,15 @@ $(document).ready(function() {
         } else {
             $(this).parent().children(".slider-images").css("margin-left","0px");
         }
+    });
+    $(".slider img").click(function() {
+        var src = $(this).attr("src");
+        $(".lightbox-content").attr("src",src);
+        $(".lightbox").removeClass("hidden");
+        $("body").css("overflow-y","hidden");
+    });
+    $(".close-lightbox").click(function() {
+        $(".lightbox").addClass("hidden");
+        $("body").css("overflow-y","scroll");
     });
 });

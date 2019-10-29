@@ -5,7 +5,6 @@
     font-family: 'Montserrat', sans-serif;
     color: #DDDDDD;
 }
-
 header {
     z-index: 20;
     position: fixed;
@@ -26,22 +25,23 @@ header a{
     display: flex;
 }
 #primary-nav a {
-    color: #EEEEEE;
+    color: #DDDDDD;
     text-decoration: none;
     padding:1em;
     transition: all 0.1s ease;
 }
 #primary-nav a:hover {
-    background: #555555;
+    /* background: #555555; */
+    filter: drop-shadow(0 0 5px #AA22AA);
+    color:#FFFFFF;
 }
 
 body {
     display:flex;
     flex-direction: column;
     align-items: center;
-    background: #111111;
+    background: #181818;
     padding: 2em 0 5em 0;
-
 }
 .bio {
     display:flex;
@@ -62,17 +62,17 @@ body {
     justify-content: flex-end;
     align-items: center;
     width:100%;
-    background: linear-gradient(0deg, #111111FF,#11111100 50%);
-    font-size:2em;
+    background: linear-gradient(0deg, #181818FF,#18181800 50%);
+    font-size:3em;
 }
 .contact-details {
-    margin-top:10em;
+    margin-top:5em;
     list-style: none;
     display:flex;
-    padding-bottom: 3vh;
+
 }
 .contact-details img {
-    width:1em;
+    width:0.7em;
 }
 .contact-details li {
     margin: 0 1vw;
@@ -82,9 +82,9 @@ body {
     text-decoration: none;
     display:block;
     /* background: #222222; */
-    padding:1em;
+    padding:0.8em 1em;
     transition: all 0.2s ease-in-out;
-    filter:brightness(90%);
+    filter:brightness(80%);
 }
 .contact-details a:hover {
     /* background:#777777; */
@@ -102,12 +102,23 @@ body {
 }
 
 .case-study {
+    display:flex;
+    flex-direction: column;
     padding:1em;
     margin:4em 1em 10em 1em;
     /* background: #444444; */
 }
 .case-study p{
-    margin:1em 2em;
+    margin:2em 10%;
+    font-size:1.2em;
+}
+.case-study ul {
+    list-style: circle;
+    margin: 1em 15%;
+    font-size:1.1em;
+}
+.case-study li {
+    margin: 0.5em 0;
 }
 .case-study>h1{
     font-size:2em;
@@ -132,12 +143,22 @@ blockquote {
     margin:2em 4em;
     font-size:1.5em;
 }
+blockquote::before,blockquote:after {
+    content: "\"";
+    font-size:2em;
+    line-height: 0;
+    position: relative;
+    top: 0.3em;
+    font-family: Arial, Helvetica, sans-serif;
+}
 p.quote-source {
     text-align: end;
     font-style: italic;
     margin: -2.5em 4em 4em 0;
 }
 .study-contents {
+    display:flex;
+    flex-direction: column;
     max-height:2000px;
     transition: all 1s ease-in-out;
 }
@@ -151,6 +172,7 @@ p.quote-source {
 
 
 .exp-col {
+    align-self: center;
     background: #222222;
     padding:0.5em 1em;
     margin: 0.5em;
@@ -158,10 +180,15 @@ p.quote-source {
     border:none;
     transition: all 0.4s ease;
     /* border: 1px solid #DDDDDD; */
+    cursor: pointer;
 }
 .exp-col:hover {
-    background: #EEEEEE;
-    color: #222222;
+    /* background: #EEEEEE;
+    color: #222222; */
+    filter: drop-shadow(0 0 5px #AA22AA);
+}
+.exp-col:active {
+    filter: drop-shadow(0 0 2px #AA22AA);
 }
 
 /*-----slider-----*/
@@ -178,7 +205,8 @@ p.quote-source {
     border:solid #EEEEEE;
     border-width: 0 10px 10px 0;
     padding:20px;
-    filter: brightness(90%);
+    filter: brightness(80%);
+    cursor: pointer;
 }
 .arrow:hover {
     filter: drop-shadow(0 0 5px #AA22AA);
@@ -209,6 +237,7 @@ p.quote-source {
     filter: brightness(0.5);
     margin-left: 20px;
     transition: filter 0.2s ease-in-out;
+    cursor: zoom-in;
 }
 
 .slider-images img.active {
@@ -216,3 +245,75 @@ p.quote-source {
     border-radius:10px;
     filter: none;
 }
+.slider-images img:hover {
+    filter: brightness(1.1);
+}
+
+.dual-slider {
+    display:flex;
+}
+.dual-slider .slider{
+    width:50%;
+}
+
+.lightbox {
+    position: fixed;
+    top:0;
+    left:0;
+    display:flex;
+    width:100vw;
+    height:100vh;
+    z-index: 30;
+    background: #000000BB;
+}
+.lightbox-content {
+    position:fixed;
+    top:50%;
+    left:50%;
+    min-width:20%;
+    max-width:90%;
+    min-height:20%;
+    max-height:90%;
+    transform: translate(-50%,-50%);
+}
+.close-lightbox {
+    position:fixed;
+    right:1em;
+    top:1em;
+    font-size:2em;
+    width:2em;
+    height:2em;
+    background: none;
+    border-radius: 100%;
+    border:1px solid #EEEEEE;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+.close-lightbox:hover {
+    background: #EEEEEE;
+    color:#111111;
+}
+.lightbox.hidden {
+    display:none;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #333333;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #555555;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #666666;
+  }
