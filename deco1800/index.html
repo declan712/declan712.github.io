@@ -42,7 +42,7 @@
                     <a href="http://niceme.me/"><img src="images/icon/phone.png"></a>
                 </li>
                 <li>
-                    <a href="http://www.declanwilkinson.me"><img src="images/icon/portfolio.png"></a>
+                    <a href="http://www.declanwilkinson.me/deco1800/"><img src="images/icon/portfolio.png"></a>
                 </li>
                 <li>
                     <a href="https://github.com/declan712"><img src="images/icon/github.png"></a>
@@ -61,7 +61,7 @@
         <h1>
             Case Studies:
         </h1>
-        <article class="case-study">
+        <!-- <article class="case-study">
             <h1>What should be in each case study?</h1>
             <hr>
             <section class="study-preview">
@@ -86,7 +86,7 @@
                 </p>
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
-        </article>
+        </article> -->
 
         <article class="case-study" id="early-prototype">
             <h1>Early Prototype</h1>
@@ -94,9 +94,11 @@
             <section class="study-preview">
                 <article>
                     <blockquote>
-                        You will conceptualise and build a mobile web-based, interactive application to enhance the experience of visitors as they navigate a fictional museum/exhibition. The application will present data from the State Library of Queensland (SLQ) to provide an alternative, digital perspective on the exhibits in the museum/exhibition.
+                            At the beginning of the course, you'll be asked to conceptualise and propose a low-fidelity, digital prototype of your individual response to the project brief.
+
+                            The first weeks of this studio involve a rapid exploration and review phase within the scope of the given brief. You'll explore background material, existing web-based applications & any other provided resources to inspire ideas that respond to the project brief.
                     </blockquote>
-                    <p class="quote-source">'Introduction to the Project Brief'</p>
+                    <p class="quote-source">'Early Prototype Brief'</p>
                 </article>
                 <img src="images/early/1.png">
             </section>
@@ -146,7 +148,7 @@
                 <img src="images/wip/1.png">
                 <article>
                     <blockquote>
-                        Your team will demonstrate their partially implemented web-based application for in-class critique. Your team will demonstrate the key interactive/technical features of their website.
+                        Midway through the course, teams will be asked to demonstrate their partially implemented web-based applications. The aim of this demonstration is to ensure that teams have considered the key challenges/obstacles to implementation, and that they have made significant progress towards overcoming these challenges.
                     </blockquote>
                     <p class="quote-source">'Work in Progress Brief'</p>
                 </article>
@@ -222,9 +224,13 @@
         <article class="case-study" id="final-delivery">
             <h1>Final Delivery</h1>
             <hr>
-            <section class="study-preview">
-                    
-                <img src="images/big-choo.png" id="big-choo">
+            <section class="study-preview">  
+                <article>
+                    <blockquote>
+                        You will conceptualise and build a mobile web-based, interactive application to enhance the experience of visitors as they navigate a fictional museum/exhibition. The application will present data from the State Library of Queensland (SLQ) to provide an alternative, digital perspective on the exhibits in the museum/exhibition.
+                    </blockquote>
+                    <p class="quote-source">'Introduction to the Project Brief'</p>
+                </article>
                 <div id="connorryan">
                     <img src="images/final/winner.jpg">
                 </div>
@@ -421,16 +427,123 @@
             <h1>Participation & Portfolio</h1>
             <hr>
             <section class="study-preview">
-                <p>
-                    Here's what you can see when it isnt expanded
-                </p>
+                <img src="images/big-choo.png" id="big-choo">
+                <article>
+                    <blockquote>
+                        In the form of "case studies", you'll be reflecting on your individual efforts in all assessments (Early Prototype, Work-in-Progress, Final Delivery and Portfolio & Participation) and the course itself.
+                    </blockquote>
+                    <p class="quote-source">'Portfolio & Participation Brief'</p>
+                </article>
+                
             </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
                 <p>
-                    <!-- After the mess of PHP and SQL that was our project, the portfolio was a relatively pleasant experience.<br>
-                    I decided to use a very simple dark theme  -->
+                    After the mess of PHP and SQL that was our project, the portfolio was a relatively pleasant experience.<br>
+                    I decided to keep the portfolio very simple, using a very plain dark theme, similar to the project, with a highlight colour used throughout for links, hover effects, and code comments.
                 </p>
+                <p>
+                    I also decided to keep the use of javascript very simple, using no external libraries or frameworks. Essentially, there are only 3 things the javascript is doing:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Image Carousel.</strong>
+                        <p>
+                            In order to fit images of all the screens of the project i created a very simple image gallery. All the images are placed in an inner container which has its left margin adjusted in order to scroll, then the outer container simply has overflow hidden.
+                        </p>
+                        <pre class="code-snippet">
+    $(".slider .next").click(function(event) { <span class="comment">Scroll to next image</span>
+        event.preventDefault();
+        var currImg = $(this).parent().children(".slider-images").children(".active");
+        var nextImg = currImg.next();
+
+        if (nextImg.length) {
+            <span class="comment">Width of the current active image used to calculate margin needed</span>
+            var margWidth = $(this).parent().children(".slider-images").children(".active").css("width");
+            <span class="comment">Move active class to change highlighted image</span>
+            currImg.removeClass("active");
+            nextImg.addClass("active");
+            <span class="comment">Get current margin</span>
+            currMarg = $(this).parent().children(".slider-images").css("margin-left");
+            var newMarg = parseInt(currMarg) - (parseInt(margWidth)+21);
+            <span class="comment">Apply new margin</span>
+            currMarg = $(this).parent().children(".slider-images").css("margin-left",newMarg+"px");
+        }
+    });
+    $(".slider .prev").click(function(event) { <span class="comment">Scroll to previous image, similar to above</span>
+        event.preventDefault();
+        var currImg = $(this).parent().children(".slider-images").children(".active");
+        var prevImg = currImg.prev();
+
+        if (prevImg.length) {
+            currImg.removeClass("active");
+            prevImg.addClass("active");
+            currMarg = $(this).parent().children(".slider-images").css("margin-left");
+            var margWidth = $(this).parent().children(".slider-images").children(".active").css("width");
+            var newMarg = parseInt(currMarg) + (parseInt(margWidth)+18);
+            currMarg = $(this).parent().children(".slider-images").css("margin-left",newMarg+"px");
+        } else {
+            $(this).parent().children(".slider-images").css("margin-left","0px");
+        }
+    });
+    <span class="comment">Display clicked images in a lightbox for larger view</span>
+    $(".slider img").click(function() {
+        var src = $(this).attr("src");
+        <span class="comment">Add clicked image to lightbox</span>
+        $(".lightbox-content").attr("src",src);
+        <span class="comment">Un-hide lightbox</span>
+        $(".lightbox").removeClass("hidden");
+        <span class="comment">Disable scrolling</span>
+        $("body").css("overflow-y","hidden");
+    });
+    $(".close-lightbox").click(function() {
+        <span class="comment">Hide lightbox</span>
+        $(".lightbox").addClass("hidden");
+        <span class="comment">Re-enable scrolling</span>
+        $("body").css("overflow-y","scroll");
+    });
+                        </pre>
+
+                    </li>
+                    <li>
+                        <strong>Animated scrolling.</strong>
+                        <p>
+                            I added this just because I like the way it looks, and it's very simple to implement.
+                        </p>
+                        <pre class="code-snippet">
+    <span class="comment">When a link starts with #, animate scrolling to it instead of following link</span>
+    $('a[href^="#"]').on('click', function(e){
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop : $(this.hash).offset().top-50
+        }, 500);
+    });
+                        </pre>
+                    </li>
+                    <li>
+                        <strong>Expanding case studies.</strong>
+                        <p>
+                            While not necessary for this assessment, I added this feature because for a real portfolio the user would want to be able to browse the small preview sections, and expand a section if it interested them. In a real portfolio the preview section would give users an brief overview of each project, however for this assessment I did not feel there was much of value to put there.
+                        </p>
+                        <pre class="code-snippet">
+    <span class="comment">Add or remove a hidden class when the corresponding button is clicked</span>
+    $(".expand-study").click(function(event) {
+        event.preventDefault();
+        $(this).parent().children().removeClass("hidden");
+        $(this).hide();
+    });
+    $(".collapse-study").click(function(event) {
+        event.preventDefault();
+        $(this).parent().addClass("hidden");
+        $(this).parent().parent().children(".expand-study").show();
+        <span class="comment">Scroll back to the top of the section as it shrinks</span>
+        $('html, body').animate({
+            scrollTop : $(this).parent().parent().offset().top-50},500);
+    });
+                        </pre>
+                    </li>
+                </ul>
+
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
         </article>
