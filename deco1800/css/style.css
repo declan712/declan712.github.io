@@ -159,8 +159,17 @@ p.quote-source {
 .study-contents {
     display:flex;
     flex-direction: column;
-    max-height:2000px;
+    max-height:4000px;
     transition: all 1s ease-in-out;
+}
+.study-contents > img {
+    margin:auto;
+}
+.study-contents p > a {
+    color:#AA22AA;
+}
+.study-contents p > a:hover {
+    filter:brightness(1.5);
 }
 .study-contents.hidden {
     max-height: 0px;
