@@ -155,7 +155,7 @@
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
                 <p>
-                    Once we were put into groups we quickly decided that the majority of coding would be done by myself, with Connor assuming the role of team leader, Laura the lead designer, and Sophie the main documenter.<br>
+                    Once we were put into groups we quickly decided that the majority of coding would be done by myself, with Connor assuming the role of team leader, Laura the lead designer, and Sophie and Connor taking care of the documentation.<br>
                     Partially due to this decision, the group decided to go forward with the multiplayer railway game concept that both Connor and myself presented in our early prototypes.
                 </p>
                 <section class="slider">
@@ -205,7 +205,7 @@
                 <h1 class="arrow next"></h1>
                 </section>
                 <p>
-                    At this point in the project, I was the only person contributing to the code of the site, as can be seen in the commit history <a href="https://github.com/declan712/DECO1800/commits/master">here</a>. In addition to the work I had completed before setting up a git repository I made 15 commits before our WiP demo on 19/09. The train image on the game screen and some of the database structure are the only things shown in the screenshots above that are not my work.
+                    At this point in the project, I was the only person contributing to the code of the site, as can be seen in the commit history <a href="https://github.com/declan712/DECO1800/commits/master">here</a>. In addition to the work I had completed before setting up a git repository, I made 15 commits before our WiP demo on 19/09. The train image on the game screen and some of the database structure are the only things shown in the screenshots above that are not my work.
                 </p>
                 <img src="images/commits.png">
                 <p>
@@ -223,15 +223,25 @@
             <h1>Final Delivery</h1>
             <hr>
             <section class="study-preview">
+                    
                 <img src="images/big-choo.png" id="big-choo">
+                <div id="connorryan">
+                    <img src="images/final/winner.jpg">
+                </div>
+                
             </section>
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
                 <p>
+                    Leading up to the final delivery I continued to steadily work on the project as I had throughout the semester, however as I was the only person working on the code until the last week my git commits became less frequent. Despite less frequent commits, the number of additions and deletions remained similar, as shown on the code frequency page of the repository.
+                </p>
+                <img src="images/final/freq.png" id="code-freq">
+                <p>
+                    In the last week before the demo, Laura and Sophie took the functional prototype that I had built, and  began working on the aesthetic design.
+                    <br>
                     The comparison below shows the functional prototype that I developed on the left, and the final delivery as presented at the trade show on the right.
                 </p>
-                <section class="dual-slider">
-                <section class="slider">
+                <section class="dual-slider"><section class="slider">
                     <h1 class="arrow prev"></h1>
                     <section class="slider-images">
                         <img src="images/wk11/1.png" class="active">
@@ -260,8 +270,149 @@
                         <img src="images/final/game.png">
                     </section>
                     <h1 class="arrow next"></h1>
-                </section>
-                </section>
+                </section></section>
+                <p>
+                    Overall the product performed well during the trade show, other than issues rendering some elements on iPhones, and some projects taking multiple attempts to assign employees. Based on the audience reactionm the demo succeeded in providing a fun and engaging experience to a group of people, with several rounds being played with up to 8 players at a time.
+                </p>
+                <section class="slider">
+                        <h1 class="arrow prev"></h1>
+                        <section class="slider-images">
+                            <img src="images/final/players.jpg" class="active">
+                            <img src="images/final/victory.jpg">
+                            <img src="images/final/winner.jpg">
+                        </section>
+                        <h1 class="arrow next"></h1>
+                    </section>
+                <p>
+                    One issue that arose was when too many people were playing on the same network, the number of calls to the database would cause the player's IP address to be blocked. Reducing the frequency of game updates helped address this but did not entirely resolve the issue. Thankfully this did not happen during the trade show.<br>
+                    The two main functions I would change if i were to repeat this project are shown below.
+                </p>
+                <p>
+                    Employee generation:
+                </p>
+<pre class="code-snippet">
+    function generateEmployee(prof,proj,option) {
+        var resource_id = 'cdafbbbf-c9ca-46a1-9f18-ecd9e8943040';
+        $.ajax({ <span class="comment">First ajax call searches SLQ database for all employees with matching positions and returns the number of results</span>
+            url: 'https://data.qld.gov.au/api/3/action/datastore_search_sql?sql=
+            SELECT COUNT(*) 
+            FROM %22'+resource_id+'%22 
+            WHERE %22Position%22 LIKE %27%25'+prof+'%25%27',//OFFSET n to select nth row
+            dataType: 'jsonp',
+            cache: true,
+            success: function(count) { <span class="comment">Using this number a random integer is generated</span>
+                var off = Math.floor(Math.random()*parseInt(count.result.records[0].count));
+                $.ajax({ <span class="comment">This integer is used to select a random employee from the dataset</span>
+                    url: 'https://data.qld.gov.au/api/3/action/datastore_search_sql?sql=
+                    SELECT * 
+                    FROM %22'+resource_id+'%22 
+                    WHERE %22Position%22 LIKE %27%25'+prof+'%25%27 
+                    LIMIT 1 
+                    OFFSET '+off,//OFFSET n to select nth row
+                    dataType: 'jsonp',
+                    cache: true,
+                    success: function(empData) { <span class="comment">The employee is then given random stats</span>
+                        var education = Math.floor(Math.random()*10);
+                        var experience = Math.floor(Math.random()*10);
+                        var productivity = Math.min(10,(Math.random()+0.5)*(education+experience)/2);
+                        
+                        $.each(empData.result.records, function(recordID, recordValue) {
+                            empName = recordValue["Name"];
+                            empPos = recordValue["Position"];
+                            empDep = recordValue["Branch"];
+                            empPay = "00.00";
+                            empPay = strToWage(recordValue["Remuneration"]);//convert to number
+                        });
+                        var query = empPos.replace(/ /g,"|");
+                        var imageData="../images/placeholder.jpg"
+                        $.ajax({ <span class="comment">Next, the Pixaby API is used to match the employee with a picture</span>
+                            url: "https://pixabay.com/api/?key=7227013-50ebabaacc01b845a5e54e34b&q="+query+"&image_type=photo&safesearch=true&category=people",
+                            dataType: "jsonp",
+                            cache: true,
+                            success: function(results) {
+                                if(results.hits.length > 0) {
+                                    imageData = results.hits[(Math.round(Math.random()*results.hits.length))].largeImageURL;
+                                }
+                                                    
+                                $.ajax({ <span class="comment">Then the employee is added to the database, iff successful the employee ID is returned</span>
+                                    url: "../database.php?action=createEmployee&uID="+uID+"&empName="+empName+"&empPos="+empPos+"&empDep="+empDep+"&empPay="+empPay+
+                                    "&empProd="+productivity+"&empEdu="+education+"&empExp="+experience+"&img="+imageData,
+                                    success: function(results) {
+                                        if (!results.includes("ERROR")) {
+                                            $.ajax({ <span class="comment">If successful the employee ID is added to the project as an option to hire</span>
+                                                url: "../database.php?action=empToProj&empID="+results+"&pID="+proj+"&pos="+option,
+                                                success: function(result2) {
+                                                    console.log("Emp Created.")
+                                                }
+                                            });
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    }
+</pre>
+                <p>
+                    This function is called at least twice every time a player clicks on a new project for the first time. To fix this I would cache the SLQ data by position searched so that each position would only be queried once, and other players can then searched the cached data instead.
+                </p>
+                <p>
+                    Project generation:
+                </p>
+<pre class="code-snippet">
+    <span class="comment">give each player a project, and a chance of getting a sabatage project</span>
+    function giveProjects() {
+        if (players.length < 2) {
+            return 0;
+        }
+        var firstPlace = players[0];
+        var fPos = parseInt(firstPlace[3]);
+        console.log("first place: "+firstPlace[1]);
+        var pDetails = generateProject();<span class="comment">Project info generated using function below</span>
+        for(i=0; i< players.length;i++) {<span class="comment">Each player given a copy of the project with employee options blank</span>
+            $.ajax({
+                url: "../database.php?action=givePlayerProject&uID="+players[i][0]+"&pName="+pDetails[0]+"&pCost="+pDetails[1]+"&emp="+pDetails[2],
+                success: function(results) {
+                }
+            });
+            var curPos = parseInt(players[i][3])
+            if ( curPos < fPos) {<span class="comment">Players get a chance to sabotage, 10% chance per place behind</span>
+                var sabChance = Math.round(((fPos-curPos)/10)*100);
+                if (Math.random()*100 < sabChance) {
+                    console.log(players[i][1]+" is "+(fPos-curPos)+" places behind and gets a chance to sabotage");
+                    giveSabProject(players[i],firstPlace);
+                }
+            }
+        }
+    }
+    
+    function generateProject() {
+        <span class="comment">List of Brisbane suburbs loaded in from external file</span>
+        var action = ["Upgrade","Maintenance","Construction"];
+        var object = ["Station","Line"];
+        var rand1 = Math.floor(Math.random()*suburbs.length);
+        var rand2 = Math.floor(Math.random()*object.length);
+        var rand3 = Math.floor(Math.random()*action.length);
+
+        var pDetails = [];
+        //project name
+        pDetails[0] = suburbs[rand1]+" "+object[rand2]+" "+action[rand3];
+        //project cost
+        pDetails[1] = (Math.random()*(20+1.5*parseInt(currentMonth))).toFixed(2);
+        //project employee
+        pDetails[2] = positions[Math.round(Math.random()*positions.length)].Position;
+        return pDetails;
+    }
+</pre>
+                <p>
+                    To fix this function I would store the project data locally and send it to the database in one call rather than sending each project separately.
+                </p>
+                <p>
+                    Overall I was happy with how the project turned out, although with the development more evenly spread I'm confident we could have created a much more polished implementation of our concept.
+                </p>
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
         </article>
@@ -277,7 +428,8 @@
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
                 <p>
-                    it has some text
+                    <!-- After the mess of PHP and SQL that was our project, the portfolio was a relatively pleasant experience.<br>
+                    I decided to use a very simple dark theme  -->
                 </p>
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
