@@ -32,8 +32,8 @@
     <section class="bio" id="bio">
         <section class="personal-info">
            <h1>Declan Wilkinson</h1>
-            <p>Bachelor of Engineering (Electrical)/<br>Bachelor of Science (Mathematics)</p>
-            <p>hello it me</p>
+            <p>Bachelor of Engineering (Electrical Engineering)/<br>Bachelor of Science (Mathematics)</p>
+            <p>University of Queensland</p>
             <ul class="contact-details">
                 <li>
                     <a href="matilto:declan.e.wilkinson@gmail.com"><img src="images/icon/email.png"></a>
@@ -239,11 +239,15 @@
             <input type="button" class="expand-study exp-col" value="expand">
             <section class="hidden study-contents">
                 <p>
-                    Leading up to the final delivery I continued to steadily work on the project as I had throughout the semester, however as I was the only person working on the code until the last week my git commits became less frequent. Despite less frequent commits, the number of additions and deletions remained similar, as shown on the code frequency page of the repository.
+                    Following the work-in-progress, I continued to steadily work on the project as I had throughout the semester, however as I was the only person working on the code until the last week my git commits became less frequent. Despite less frequent commits, the number of additions and deletions remained similar, as shown on the code frequency page of the repository.
                 </p>
                 <img src="images/final/freq.png" id="code-freq">
                 <p>
+                    Much of the work at this point was combining the elements from each test page I had built into just the player, and game screens. Once this was done a small problem became apparent, if players wanted to look at the game map on their own devices they would speed up time and cause extra projects to be created. To combat this a second game screen was created, with no links leading to it, that contained the code to control time and also buttons to perform some operations on the database (delete/reset/move players).
+                </p>
+                <p>
                     In the last week before the demo, Laura and Sophie took the functional prototype that I had built, and  began working on the aesthetic design.
+                    While the Github commit history shows sophie making approx 1700 additions to various files, the majority of this was bringing the repository up to date with code that i had uploaded to our web hosting but not committed.
                     <br>
                     The comparison below shows the functional prototype that I developed on the left, and the final delivery as presented at the trade show on the right.
                 </p>
@@ -363,7 +367,7 @@
     }
 </pre>
                 <p>
-                    This function is called at least twice every time a player clicks on a new project for the first time. To fix this I would cache the SLQ data by position searched so that each position would only be queried once, and other players can then searched the cached data instead.
+                    This function is called at least twice every time a player clicks on a new project for the first time. To fix this I would cache the SLQ data by position searched so that each position would only be queried once, and other players can then searched the cached data instead. This function is also likely the source of the error some players experience when trying to open a project, if the function failed to create an employee 5 times it would stop trying in order avoid excessive calls to the database. I did not manage to determine the cause of this issue before the trade show. 
                 </p>
                 <p>
                     Project generation:
@@ -417,7 +421,7 @@
                     To fix this function I would store the project data locally and send it to the database in one call rather than sending each project separately.
                 </p>
                 <p>
-                    Overall I was happy with how the project turned out, although with the development more evenly spread I'm confident we could have created a much more polished implementation of our concept.
+                    Overall I was happy with how the project turned out, although with the development more evenly spread I'm confident we could have created a much more polished implementation of our concept. If I were to attempt a similar project in the future I would probably choose a more realistic concept and focus on developing it to a higher standard.
                 </p>
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
@@ -544,6 +548,34 @@
                     </li>
                 </ul>
 
+                <input type="button" class="collapse-study  exp-col" value="See Less">
+            </section>
+        </article>
+
+        <article class="case-study">
+            <h1>References</h1>
+            <hr>
+            <section class="study-preview">
+                    <article>  
+                    </article>
+            </section>
+            <input type="button" class="expand-study  exp-col" value="expand">
+            <section class="hidden study-contents">
+                <p>
+                    <ul>
+                        <li>
+                            <a href="https://www.pexels.com/photo/scenic-view-of-mountain-during-evening-2085998/">
+                                'Scenic View Of Mountain During Evening', 2019, Ashan Rai, Pexels.com</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/declan712/DECO1800/pulse">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://projects.invisionapp.com/share/WNT9AOAEGTQ#/screens">Invision prototype, 2019, Declan Wilkinson</a>
+                        </li>
+                    </ul>
+                </p>
+                
                 <input type="button" class="collapse-study  exp-col" value="See Less">
             </section>
         </article>

@@ -61,9 +61,13 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    text-align: center;
     width:100%;
     background: linear-gradient(0deg, #181818FF,#18181800 50%);
-    font-size:3em;
+    font-size:2.5em;
+}
+.personal-info h1{
+    font-size: 1.5em;
 }
 .contact-details {
     margin-top:5em;
@@ -190,10 +194,10 @@ p.quote-source {
 .study-contents > img {
     margin:auto;
 }
-.study-contents p > a {
+.study-contents a {
     color:#AA22AA;
 }
-.study-contents p > a:hover {
+.study-contents  a:hover {
     filter:brightness(1.5);
 }
 .study-contents.hidden {
