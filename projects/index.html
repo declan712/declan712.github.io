@@ -29,30 +29,77 @@
     </section>
     <a href="" id="top-button">^</a>
     <section id="featured-projects">
-        <article id="diy-synth">
-            <h2>DIY Analogue Synthesiser</h2>
-            <p>some text here</p>
-            <a href="synth.html">More Info</a>
+
+        <article class="project">
+            <h1>PROJECT NAME</h1>
+            <hr>
+            <section class="project-preview">
+                <p>preview goes here</p>
+            </section>
+            <input type="button" class="expand" value="expand">
+
+            <section class="hidden project-contents">
+                <p>some text here</p>
+                <a href="synth.html">More Info</a>
+                <input type="button" class="contract" value="contract">
+            </section>
         </article>
 
-        <article id="gen-blocks">
-            <h2>Modular Waveform Generator</h2>
-            <p>some text here</p>
-            <img src="../images/wavegen2.jpg">
-            <a href="genblocks.html">More Info</a>
+        <article class="project">
+            <h1>DIY Analogue Synthesiser</h1>
+            <hr>
+            <section class="project-preview">
+                <p>some text here</p>
+            </section>
+            <input type="button" class="expand" value="expand">
+
+            <section class="hidden project-contents">
+                    <p>some text here</p>
+                <a href="synth.html">More Info</a>
+                <input type="button" class="contract" value="contract">
+            </section>
         </article>
+
+        <article class="project">
+            <h1>Modular Waveform Generator</h1>
+            <hr>
+            <section class="project-preview">
+                <p>preview goes here</p>
+            </section>
+            <input type="button" class="expand" value="expand">
+
+            <section class="hidden project-contents">
+                <p>some text here</p>
+                <section class="slider">
+                        <h1 class="arrow prev"></h1>
+                        <section class="slider-images">
+                            <img src="../images/wavegen.png" class="active">
+                            <img src="../images/wavegen2.jpg">
+                            <img src="../images/genblocks_schematic.png">
+                            <img src="../images/genblocks_pcb.png">
+                        </section>
+                        <h1 class="arrow next"></h1>
+                    </section>
+                <a href="genblocks.html">More Info</a>
+                <input type="button" class="contract" value="contract">
+            </section>
+        </article>
+
     </section>
     <footer>
-            <nav id="social-nav">
-            <ul>
-                <li><a href="#">email</a></li>
-                <li><a href="#">github</a></li>
-                <li><a href="#">linkedin</a></li>
-                <li><a href="#">?</a></li>
-            </ul>
+        <nav>
+        <ul class="contact-details">
+            <li><a href="matilto:declan.e.wilkinson@gmail.com"><img src="../images/icon/email.png"></a></li>
+            <li><a href="https://github.com/declan712"><img src="../images/icon/github.png"></a></li>
+            <li><a href="https://www.linkedin.com/in/declan-wilkinson-51a17b134/"><img src="../images/icon/in.png"></a></li>
+        </ul>
         </nav>
-        <hr>
-        &copy 2019 Declan Wilkinson 
-        </footer>
+    <hr>
+    &copy 2019 Declan Wilkinson 
+    </footer>
+    <section class="lightbox hidden">
+        <input type="button" class="close-lightbox" value="X">
+        <img class="lightbox-content" src="images/big-choo.png">
+    </section>
 </body>
 </html>
